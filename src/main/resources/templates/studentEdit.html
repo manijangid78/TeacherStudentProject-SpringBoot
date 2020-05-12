@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentCollageBox</title>
+</head>
+<body>
+<div align="center">
+    <h1>Student Portal</h1>
+    <h3>Fill All Details</h3>
+
+    <form th:action="studentCreate" method="post">
+        <table th:each="newStudent:${newStudent}">
+            <tr>
+                <td>Id </td>
+                <td><input type="number" th:value="${newStudent.id}" name="id"/></td>
+            </tr>
+            <tr>
+                <td>First Name </td>
+                <td><input type="text" th:value="${newStudent.StudentName.firstName}" name="firstName"></td>
+            </tr><tr>
+            <td>Middle Name </td>
+            <td><input type="text" th:value="${newStudent.StudentName.middleName}" name="middleName"></td>
+        </tr><tr>
+            <td>Last Name </td>
+            <td><input type="text" th:value="${newStudent.StudentName.lastName}" name="lastName"></td>
+        </tr>
+
+            <tr>
+                <td>RollNo</td>
+                <td><input type="text" th:value="${newStudent.rollNo}" name="rollNo"/></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" th:value="${newStudent.password}" name="password"/></td>
+            </tr>
+            <tr>
+                <td>Branch</td>
+                <td><input type="text" th:value="${newStudent.branch}" name="branch"/></td>
+            </tr>
+            <tr>
+                <td>Semester</td>
+                <td><input type="text" th:value="${newStudent.semester}" name="semester"/></td>
+            </tr>
+            <tr>
+                <td>MobileNo</td>
+                <td><input type="text" th:value="${newStudent.MobileNo}" name="mobileNo"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TeacherCollageBox</title>
+</head>
+<body>
+    <div style="height:100px"/>
+    <div align="center">
+        <h1>Teacher Portal</h1>
+        </br>
+        <table th:each="teacher:${teacherData}">
+
+            <tr>
+                <td>Id: </td>
+                <td th:text="${teacher.tId}"></td>
+            </tr>
+            <tr>
+                <td>Name : </td>
+                <td th:text="${teacher.TeacherName.firstName}"></td>
+                <td th:text=" ${teacher.TeacherName.middleName}"></td>
+                <td th:text=" ${teacher.TeacherName.lastName}"></td>
+            </tr>
+            <tr>
+                <td>Subject : </td>
+                <td th:text="${teacher.subject}"></td>
+            </tr>
+            <tr>
+                <td>MobileNo : </td>
+                <td th:text="${teacher.MobileNo}"></td>
+            </tr>
+        </table>
+        <a th:href="teacherOperation">Back to Operation </a>
+    </div>
+</body>
+</html>

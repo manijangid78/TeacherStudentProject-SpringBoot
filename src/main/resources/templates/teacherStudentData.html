@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TeacherCollageBox</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Teacher Portal</h1>
+        <form th:action="teacherStudentData" method="post">
+            <label>Id</label>
+            <input type="number" name="id">
+            <input type="submit" value="Get">
+        </form>
+
+        <table th:each="student:${studentData}">
+            <tr>
+                <td>Name : </td>
+                <td th:text="${student.StudentName.firstName}"></td>
+                <td th:text=" ${student.StudentName.middleName}"></td>
+                <td th:text=" ${student.StudentName.lastName}"></td>
+            </tr>
+            <tr>
+                <td>RollNO </td>
+                <td th:text="${student.rollNo}"></td>
+            </tr>
+            <tr>
+                <td>Branch : </td>
+                <td th:text="${student.branch}"></td>
+            </tr>
+            <tr>
+                <td>Semester : </td>
+                <td th:text="${student.semester}"></td>
+            </tr>
+            <tr>
+                <td>MobileNo : </td>
+                <td th:text="${student.MobileNo}"></td>
+            </tr>
+        </table>
+
+        </br>
+        </br>
+        <h2 th:text="${studentNotFoundMessage}"></h2>
+        </br>
+        <a th:href="teacherStudentOperation">Back to Operation </a>
+
+    </div>
+</body>
+</html>

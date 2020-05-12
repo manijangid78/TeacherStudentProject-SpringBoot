@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CollageBox</title>
+</head>
+<body>
+    <div style="height:150px"></div>
+    <div align="center">
+        <h1>Welcome to Collage Box</h1>
+
+        <form th:action="studentLogIn">
+            <input type="submit" value="Student"/>
+        </form>
+        </br>
+        <form th:action="teacherLogIn">
+            <input type="submit" value="Teacher"/>
+        </form>
+    </div>
+</body>
+</html>

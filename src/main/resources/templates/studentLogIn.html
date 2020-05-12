@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentCollageBox</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Student Portal</h1>
+        <form th:action="studentOperation" method="post">
+            <table>
+                <tr>
+                    <td>Id :</td>
+                    <td><input type="number" name="id"></td>
+                </tr>
+                <tr>
+                    <td>Password : </td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+            </table>
+            </br>
+            <tr><input type="submit" value="LogIn"/></tr>
+        </form>
+        </br>
+        <a th:href="studentCreate">Create Account</a>
+        <h4 th:text="${logInFailedMessage}"></h4>
+        <a th:href="selectOne">Go Back</a>
+    </div>
+</body>
+</html>
